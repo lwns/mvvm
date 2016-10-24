@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.main.home.bangumi.BangumiItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app.margin.normal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/app.margin.normal"
+            android:layout_marginStart="@dimen/app.margin.normal"
+            android:layout_marginTop="@dimen/app.margin.normal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/layout_bangumi_new"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/app.text.height.normal"
+                android:layout_margin="@dimen/app.margin.small"
+                android:layout_weight="1"
+                android:background="@drawable/shape_yellow_bg"
+                android:drawablePadding="@dimen/app.padding.small"
+                android:drawableStart="@drawable/ic_following_bangumi"
+                android:gravity="center"
+                android:padding="@dimen/app.padding.small"
+                android:text="@string/main.home.bangumi.new"
+                android:textColor="@color/white"
+                android:textSize="@dimen/app.text.list.title"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/layout_bangumi_week"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/app.text.height.normal"
+                android:layout_margin="@dimen/app.margin.small"
+                android:layout_weight="1"
+                android:background="@drawable/shape_pink_bg"
+                android:drawablePadding="@dimen/app.padding.small"
+                android:drawableStart="@drawable/ic_bangumi_calendar_7"
+                android:gravity="center"
+                android:padding="@dimen/app.padding.small"
+                android:text="@string/main.home.bangumi.week"
+                android:textColor="@color/white"
+                android:textSize="@dimen/app.text.normal"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/layout_bangumi_index"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/app.text.height.normal"
+                android:layout_margin="@dimen/app.margin.small"
+                android:layout_weight="1"
+                android:background="@drawable/shape_blue_bg"
+                android:drawablePadding="@dimen/app.padding.small"
+                android:drawableStart="@drawable/ic_bangumi_category"
+                android:gravity="center"
+                android:padding="@dimen/app.padding.small"
+                android:text="@string/main.home.bangumi.index"
+                android:textColor="@color/white"
+                android:textSize="@dimen/app.text.normal"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/app.padding.small"
+            android:layout_marginStart="@dimen/app.padding.small">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/app.margin.normal"
+                android:orientation="horizontal"
+                android:padding="@dimen/app.margin.normal">
+
+                <ImageView
+                    android:layout_width="@dimen/app.image.width.normal"
+                    android:layout_height="@dimen/app.image.height.small"
+                    android:src="@drawable/ic_category_t33" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/app.margin.normal"
+                    android:text="@string/main.home.bangumi.serial"
+                    android:textColor="@color/app.text"
+                    android:textSize="@dimen/app.text.normal" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_all_serial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:drawableEnd="@drawable/register_bottom_arrow"
+                android:drawablePadding="@dimen/app.padding.small"
+                android:padding="@dimen/app.padding.normal"
+                android:text="@string/main.home.bangumi.serial.all"
+                android:textColor="@color/app.text"
+                android:textSize="@dimen/app.text.normal" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

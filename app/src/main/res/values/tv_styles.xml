@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--&lt;!&ndash; 999999颜色值字体 &ndash;&gt;-->
+    <!--<style name="tv12_999999">-->
+        <!--<item name="android:textColor">@color/tv999999</item>-->
+        <!--<item name="android:textSize">@dimen/dm_12sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv14_999999">-->
+        <!--<item name="android:textColor">@color/tv999999</item>-->
+        <!--<item name="android:textSize">@dimen/dm_14sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv14_999999_mw" parent="BASE2">-->
+        <!--<item name="android:textColor">@color/tv999999</item>-->
+        <!--<item name="android:textSize">@dimen/dm_14sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv14_999999_ww" parent="BASE4">-->
+        <!--<item name="android:textColor">@color/tv999999</item>-->
+        <!--<item name="android:textSize">@dimen/dm_14sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv15_999999">-->
+        <!--<item name="android:textColor">@color/tv999999</item>-->
+        <!--<item name="android:textSize">@dimen/dm_15sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_999999">-->
+        <!--<item name="android:textColor">@color/tv999999</item>-->
+        <!--<item name="android:textSize">@dimen/dm_16sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_999999">-->
+        <!--<item name="android:textColor">@color/tv999999</item>-->
+        <!--<item name="android:textSize">@dimen/dm_18sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_999999_ww" parent="BASE4">-->
+        <!--<item name="android:textColor">@color/tv999999</item>-->
+        <!--<item name="android:textSize">@dimen/dm_18sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_999999_mw" parent="BASE2">-->
+        <!--<item name="android:textColor">@color/tv999999</item>-->
+        <!--<item name="android:textSize">@dimen/dm_18sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_999999_ww" parent="BASE4">-->
+        <!--<item name="android:textColor">@color/tv999999</item>-->
+        <!--<item name="android:textSize">@dimen/dm_16sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_999999_mw" parent="BASE2">-->
+        <!--<item name="android:textColor">@color/tv999999</item>-->
+        <!--<item name="android:textSize">@dimen/dm_16sp</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash; ffffff颜色值字体 &ndash;&gt;-->
+
+
+    <!--&lt;!&ndash; 6e6e6e颜色值字体 &ndash;&gt;-->
+    <!--<style name="tv12_6e6e6e">-->
+        <!--<item name="android:textColor">@color/tv6e6e6e</item>-->
+        <!--<item name="android:textSize">@dimen/dm_12sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv14_6e6e6e">-->
+        <!--<item name="android:textColor">@color/tv6e6e6e</item>-->
+        <!--<item name="android:textSize">@dimen/dm_14sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_6e6e6e">-->
+        <!--<item name="android:textColor">@color/tv6e6e6e</item>-->
+        <!--<item name="android:textSize">@dimen/dm_16sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_6e6e6e">-->
+        <!--<item name="android:textColor">@color/tv6e6e6e</item>-->
+        <!--<item name="android:textSize">@dimen/dm_18sp</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash; 333333颜色值字体 &ndash;&gt;-->
+    <!--<style name="tv12_333333">-->
+        <!--<item name="android:textColor">@color/act_name</item>-->
+        <!--<item name="android:textSize">@dimen/dm_12sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv14_333333">-->
+        <!--<item name="android:textColor">@color/act_name</item>-->
+        <!--<item name="android:textSize">@dimen/dm_14sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv15_333333">-->
+        <!--<item name="android:textColor">@color/act_name</item>-->
+        <!--<item name="android:textSize">@dimen/dm_15sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_333333">-->
+        <!--<item name="android:textColor">@color/act_name</item>-->
+        <!--<item name="android:textSize">@dimen/dm_16sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_333333">-->
+        <!--<item name="android:textColor">@color/act_name</item>-->
+        <!--<item name="android:textSize">@dimen/dm_18sp</item>-->
+    <!--</style>-->
+
+
+    <!--&lt;!&ndash; ffffff颜色值字体 &ndash;&gt;-->
+
+
+    <!--<style name="tv12_white">-->
+        <!--<item name="android:textColor">@android:color/white</item>-->
+        <!--<item name="android:textSize">@dimen/dm_12sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv14_white">-->
+        <!--<item name="android:textColor">@android:color/white</item>-->
+        <!--<item name="android:textSize">@dimen/dm_14sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_white">-->
+        <!--<item name="android:textColor">@android:color/white</item>-->
+        <!--<item name="android:textSize">@dimen/dm_16sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_white">-->
+        <!--<item name="android:textColor">@android:color/white</item>-->
+        <!--<item name="android:textSize">@dimen/dm_18sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv20_white">-->
+        <!--<item name="android:textColor">@android:color/white</item>-->
+        <!--<item name="android:textSize">@dimen/dm_20sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv25_white">-->
+        <!--<item name="android:textColor">@android:color/white</item>-->
+        <!--<item name="android:textSize">@dimen/dm_25sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv35_white">-->
+        <!--<item name="android:textColor">@android:color/white</item>-->
+        <!--<item name="android:textSize">@dimen/dm_30sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv50_white">-->
+        <!--<item name="android:textColor">@android:color/white</item>-->
+        <!--<item name="android:textSize">@dimen/dm_50sp</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash; ffffff颜色值字体 &ndash;&gt;-->
+
+
+    <!--<style name="tv12_ed5565">-->
+        <!--<item name="android:textColor">@color/red_ed5565</item>-->
+        <!--<item name="android:textSize">@dimen/dm_12sp</item>-->
+    <!--</style>-->
+
+
+    <!--<style name="tv10_ed5565">-->
+        <!--<item name="android:textColor">@color/red_ed5565</item>-->
+        <!--<item name="android:textSize">@dimen/dm_10sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv14_ed5565">-->
+        <!--<item name="android:textColor">@color/red_ed5565</item>-->
+        <!--<item name="android:textSize">@dimen/dm_14sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_ed5565">-->
+        <!--<item name="android:textColor">@color/red_ed5565</item>-->
+        <!--<item name="android:textSize">@dimen/dm_16sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_ed5565_mw" parent="BASE2">-->
+        <!--<item name="android:textColor">@color/red_ed5565</item>-->
+        <!--<item name="android:textSize">@dimen/dm_16sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_ed5565_ww" parent="BASE4">-->
+        <!--<item name="android:textColor">@color/red_ed5565</item>-->
+        <!--<item name="android:textSize">@dimen/dm_16sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_ed5565">-->
+        <!--<item name="android:textColor">@color/red_ed5565</item>-->
+        <!--<item name="android:textSize">@dimen/dm_18sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_ed5565_mw" parent="BASE2">-->
+        <!--<item name="android:textColor">@color/red_ed5565</item>-->
+        <!--<item name="android:textSize">@dimen/dm_18sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_ed5565_ww" parent="BASE4">-->
+        <!--<item name="android:textColor">@color/red_ed5565</item>-->
+        <!--<item name="android:textSize">@dimen/dm_18sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv24_ed5565">-->
+        <!--<item name="android:textColor">@color/red_ed5565</item>-->
+        <!--<item name="android:textSize">@dimen/dm_24sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv25_ed5565">-->
+        <!--<item name="android:textColor">@color/red_ed5565</item>-->
+        <!--<item name="android:textSize">@dimen/dm_25sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv25_ed5565_mw" parent="BASE2">-->
+        <!--<item name="android:textColor">@color/red_ed5565</item>-->
+        <!--<item name="android:textSize">@dimen/dm_25sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv30_ed5565">-->
+        <!--<item name="android:textColor">@color/red_ed5565</item>-->
+        <!--<item name="android:textSize">@dimen/dm_30sp</item>-->
+    <!--</style>-->
+
+
+    <!--&lt;!&ndash; 000000颜色值字体 &ndash;&gt;-->
+
+    <!--<style name="tv12_black">-->
+        <!--<item name="android:textColor">@android:color/black</item>-->
+        <!--<item name="android:textSize">@dimen/dm_12sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv14_black">-->
+        <!--<item name="android:textColor">@android:color/black</item>-->
+        <!--<item name="android:textSize">@dimen/dm_14sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv14_black_ww" parent="BASE4">-->
+        <!--<item name="android:textColor">@android:color/black</item>-->
+        <!--<item name="android:textSize">@dimen/dm_14sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv14_black_mw" parent="BASE2">-->
+        <!--<item name="android:textColor">@android:color/black</item>-->
+        <!--<item name="android:textSize">@dimen/dm_14sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_black">-->
+        <!--<item name="android:textColor">@android:color/black</item>-->
+        <!--<item name="android:textSize">@dimen/dm_16sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_black_ww" parent="BASE4">-->
+        <!--<item name="android:textColor">@android:color/black</item>-->
+        <!--<item name="android:textSize">@dimen/dm_16sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_black_mw" parent="BASE2">-->
+        <!--<item name="android:textColor">@android:color/black</item>-->
+        <!--<item name="android:textSize">@dimen/dm_16sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_black">-->
+        <!--<item name="android:textColor">@android:color/black</item>-->
+        <!--<item name="android:textSize">@dimen/dm_18sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_black_ww" parent="BASE4">-->
+        <!--<item name="android:textColor">@android:color/black</item>-->
+        <!--<item name="android:textSize">@dimen/dm_18sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_black_mw" parent="BASE2">-->
+        <!--<item name="android:textColor">@android:color/black</item>-->
+        <!--<item name="android:textSize">@dimen/dm_18sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv20_black">-->
+        <!--<item name="android:textColor">@android:color/black</item>-->
+        <!--<item name="android:textSize">@dimen/dm_20sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv24_black">-->
+        <!--<item name="android:textColor">@android:color/black</item>-->
+        <!--<item name="android:textSize">@dimen/dm_24sp</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash;#158dc3&ndash;&gt;-->
+    <!--<style name="tv14_158dc3">-->
+        <!--<item name="android:textColor">@color/blue_158dc3</item>-->
+        <!--<item name="android:textSize">@dimen/dm_14dp</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash; 组合字体 &ndash;&gt;-->
+    <!--<style name="tv14_white_ww" parent="tv14_white">-->
+        <!--<item name="android:layout_width">wrap_content</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+
+
+    <!--<style name="tv14_white_mw" parent="tv14_white">-->
+        <!--<item name="android:layout_width">match_parent</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+
+
+    <!--<style name="tv16_white_ww" parent="tv16_white">-->
+        <!--<item name="android:layout_width">wrap_content</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_white_mw" parent="tv16_white">-->
+        <!--<item name="android:layout_width">match_parent</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_white_ww" parent="tv18_white">-->
+        <!--<item name="android:layout_width">match_parent</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv20_white_mw" parent="tv20_white">-->
+        <!--<item name="android:layout_width">match_parent</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv35_white_mw" parent="tv35_white">-->
+        <!--<item name="android:layout_width">match_parent</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv25_white_ww" parent="tv25_white">-->
+        <!--<item name="android:layout_width">wrap_content</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+    <!--&lt;!&ndash; 组合字体 红色&ndash;&gt;-->
+    <!--<style name="tv18_red_rr" parent="tv18_ed5565">-->
+        <!--<item name="android:layout_width">wrap_content</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_red_rr" parent="tv16_ed5565">-->
+        <!--<item name="android:layout_width">wrap_content</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv14_red_rr" parent="tv14_ed5565">-->
+        <!--<item name="android:layout_width">wrap_content</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash; ffff颜色值字体 &ndash;&gt;-->
+
+
+    <!--<style name="tv12_ffff">-->
+        <!--<item name="android:textColor">@color/tvffff</item>-->
+        <!--<item name="android:textSize">@dimen/dm_12sp</item>-->
+    <!--</style>-->
+
+
+    <!--<style name="tv10_ffff">-->
+        <!--<item name="android:textColor">@color/tvffff</item>-->
+        <!--<item name="android:textSize">@dimen/dm_10sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv14_ffff">-->
+        <!--<item name="android:textColor">@color/tvffff</item>-->
+        <!--<item name="android:textSize">@dimen/dm_14sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_tvffff">-->
+        <!--<item name="android:textColor">@color/tvffff</item>-->
+        <!--<item name="android:textSize">@dimen/dm_16sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_tvffff_mw" parent="BASE2">-->
+        <!--<item name="android:textColor">@color/tvffff</item>-->
+        <!--<item name="android:textSize">@dimen/dm_16sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_tvffff_ww" parent="BASE4">-->
+        <!--<item name="android:textColor">@color/tvffff</item>-->
+        <!--<item name="android:textSize">@dimen/dm_16sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_tvffff">-->
+        <!--<item name="android:textColor">@color/tvffff</item>-->
+        <!--<item name="android:textSize">@dimen/dm_18sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_tvffff_mw" parent="BASE2">-->
+        <!--<item name="android:textColor">@color/tvffff</item>-->
+        <!--<item name="android:textSize">@dimen/dm_18sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv18_tvffff_ww" parent="BASE4">-->
+        <!--<item name="android:textColor">@color/tvffff</item>-->
+        <!--<item name="android:textSize">@dimen/dm_18sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv24_tvffff">-->
+        <!--<item name="android:textColor">@color/tvffff</item>-->
+        <!--<item name="android:textSize">@dimen/dm_24sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv25_tvffff">-->
+        <!--<item name="android:textColor">@color/tvffff</item>-->
+        <!--<item name="android:textSize">@dimen/dm_25sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv25_tvffff_mw" parent="BASE2">-->
+        <!--<item name="android:textColor">@color/tvffff</item>-->
+        <!--<item name="android:textSize">@dimen/dm_25sp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv30_tvffff">-->
+        <!--<item name="android:textColor">@color/tvffff</item>-->
+        <!--<item name="android:textSize">@dimen/dm_30sp</item>-->
+    <!--</style>-->
+
+
+    <!--&lt;!&ndash; 组合字体 黑色&ndash;&gt;-->
+    <!--<style name="tv18_black_bb" parent="tv18_black">-->
+        <!--<item name="android:layout_width">wrap_content</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv16_black_bb" parent="tv16_black">-->
+        <!--<item name="android:layout_width">wrap_content</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+
+    <!--<style name="tv14_black_bb" parent="tv14_black">-->
+        <!--<item name="android:layout_width">wrap_content</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+</resources>

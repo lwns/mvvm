@@ -1,0 +1,52 @@
+<resources>
+    <string name="app.bilibili">音乐</string>
+
+    <string name="navigation.drawer.open">Open navigation drawer</string>
+    <string name="navigation.drawer.close">Close navigation drawer</string>
+
+    <string name="main.menu.home.tab1">直播</string>
+    <string name="main.menu.home.tab2">推荐</string>
+    <string name="main.menu.home.tab3">番剧</string>
+    <string name="main.menu.home.tab4">分区</string>
+    <string name="main.menu.home.tab5">关注</string>
+    <string name="main.menu.home.tab6">发现</string>
+    <string name="main.menu.home.tab7">发现</string>
+
+    <string-array name="home_sections">
+        <item>@string/main.menu.home.tab1</item>
+        <item>@string/main.menu.home.tab2</item>
+        <item>@string/main.menu.home.tab3</item>
+        <item>@string/main.menu.home.tab4</item>
+        <item>@string/main.menu.home.tab5</item>
+        <item>@string/main.menu.home.tab6</item>
+    </string-array>
+
+    <string name="main.menu.nav.home">主页</string>
+    <string name="main.menu.nav.download">离线缓存</string>
+    <string name="main.menu.nav.star">我的收藏</string>
+    <string name="main.menu.nav.history">历史记录</string>
+    <string name="main.menu.nav.people">关注的人</string>
+    <string name="main.menu.nav.walley">消费记录</string>
+    <string name="main.menu.nav.color">主题选择</string>
+    <string name="main.menu.nav.shop">应用推荐</string>
+    <string name="main.menu.nav.setting">设置与帮助</string>
+
+    <string name="main.home.title">HotBitmapGG</string>
+    <string name="main.home.bangumi.new">追番</string>
+    <string name="main.home.bangumi.week">放送表</string>
+    <string name="main.home.bangumi.index">索引</string>
+    <string name="main.home.bangumi.serial">新番连载</string>
+    <string name="main.home.bangumi.serial.all">所有连载</string>
+    <string name="main.home.bangumi.season">四月新番</string>
+    <string name="main.home.bangumi.season.list">分季列表</string>
+    <string name="main.home.bangumi.recommend">番剧推荐</string>
+
+
+    <string name="main.file.all">全部</string>
+    <string name="main.file.folder">文件</string>
+
+
+    <string name="live.video.init">初始化播放器…</string>
+    <string name="live.add.follow">+关注</string>
+
+</resources>

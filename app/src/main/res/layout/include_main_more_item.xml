@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.main.home.more.MoreViewModel.MoreItem" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/app.margin.large"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/item_more_icon"
+            android:layout_width="@dimen/app.image.width.normal"
+            android:layout_height="@dimen/app.image.height.normal"
+            android:src="@{viewModel.resource}" />
+
+        <TextView
+            android:id="@+id/item_more_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app.padding.small"
+            android:text="@{viewModel.title}"
+            android:textColor="@color/app.text"
+            android:textSize="@dimen/app.text.small" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
+def ext = rootProject.ext
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+android {
+    compileSdkVersion ext.compileSdkVersion
+    buildToolsVersion ext.buildToolsVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId ext.applicationId
+        minSdkVersion ext.minSdkVersion
+        targetSdkVersion ext.targetSdkVersion
+        versionCode ext.versionCode
+        versionName ext.versionName
+        multiDexEnabled true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+    }
+
+    dexOptions {
+        incremental true
+        jumboMode true
+        javaMaxHeapSize "4g"
+    }
+}
+
+dependencies {
+
+    def compiles = ext.compiles
+    def provides = ext.provides
+    def apts = ext.apts
+    def release = ext.release
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':data')
+
+    compile compiles.supportAppCompat
+    compile compiles.supportRecyclerView
+    compile compiles.supportDesgin
+    compile compiles.supportCardView
+    compile compiles.glide
+    compile compiles.viewpagerIndicator
+    compile compiles.logansquareConverter
+    compile compiles.eventbus
+    compile compiles.dagger
+    compile compiles.rxlifecycle
+    compile compiles.xrecyclerview
+    compile compiles.bottomnavigation
+    compile compiles.tablayout
+
+    //ijkplayer播放器
+    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.6.0'
+    compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.6.0'
+    compile 'tv.danmaku.ijk.media:ijkplayer-armv5:0.6.1'
+    compile 'tv.danmaku.ijk.media:ijkplayer-x86:0.6.1'
+    //最小版本21
+    compile 'tv.danmaku.ijk.media:ijkplayer-arm64:0.6.1'
+    compile 'tv.danmaku.ijk.media:ijkplayer-x86_64:0.6.1'
+
+    compile 'com.jakewharton.timber:timber:4.1.2'
+
+    provided provides.daggerCompiler
+    provided provides.annotation
+
+    apt apts.logansquareCompiler
+
+
+    debugCompile compiles.leakcanary
+    releaseCompile release.leakcanary
+    testCompile release.leakcanary
+}

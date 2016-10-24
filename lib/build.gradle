@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
+def ext = rootProject.ext
+
+android {
+    compileSdkVersion ext.compileSdkVersion
+    buildToolsVersion ext.buildToolsVersion
+
+    defaultConfig {
+        versionCode ext.versionCode
+        versionName ext.versionName
+    }
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//    }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
+//
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    def compiles = ext.compiles
+    def provides = ext.provides
+    def apts = ext.apts
+    def release = ext.release
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile compiles.supportAppCompat
+    compile compiles.supportRecyclerView
+    compile compiles.supportDesgin
+    compile compiles.supportCardView
+    compile compiles.glide
+    compile compiles.viewpagerIndicator
+    compile compiles.guangqiangWidgets
+    compile compiles.guangqiangUtils
+    compile compiles.okhttpLog
+    compile compiles.logansquareConverter
+    compile compiles.eventbus
+    compile compiles.dagger
+    compile compiles.rxlifecycle
+    compile compiles.bindingAdapter
+    compile compiles.bindingrecyclerView
+    compile compiles.xrecyclerview
+    compile compiles.bottomnavigation
+
+    compile 'com.jakewharton.timber:timber:4.1.2'
+
+    provided provides.daggerCompiler
+    provided provides.annotation
+
+    apt apts.logansquareCompiler
+}

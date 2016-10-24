@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/item_home"
+            android:checked="true"
+            android:icon="@drawable/ic_main_nav_menu_home"
+            android:title="@string/main.menu.nav.home"/>
+
+        <item
+            android:id="@+id/item_download"
+            android:icon="@drawable/ic_main_nav_menu_download"
+            android:title="@string/main.menu.nav.download"/>
+
+        <item
+            android:id="@+id/item_favourite"
+            android:icon="@drawable/ic_main_nav_menu_star"
+            android:title="@string/main.menu.nav.star"/>
+        <item
+            android:id="@+id/item_history"
+            android:icon="@drawable/ic_main_nav_menu_history"
+            android:title="@string/main.menu.nav.history"/>
+
+
+        <item
+            android:id="@+id/item_group"
+            android:icon="@drawable/ic_main_nav_menu_people"
+            android:title="@string/main.menu.nav.people"/>
+        <item
+            android:id="@+id/item_tracker"
+            android:icon="@drawable/ic_main_nav_menu_wallet"
+            android:title="@string/main.menu.nav.walley"/>
+
+
+        <item
+            android:id="@+id/item_theme"
+            android:icon="@drawable/ic_main_nav_menu_color"
+            android:title="@string/main.menu.nav.color"/>
+
+        <item
+            android:id="@+id/item_app"
+            android:icon="@drawable/ic_main_nav_menu_shop"
+            android:title="@string/main.menu.nav.shop"/>
+
+
+        <item
+            android:id="@+id/item_settings"
+            android:icon="@drawable/ic_main_nav_menu_setting"
+            android:title="@string/main.menu.nav.setting"/>
+    </group>
+
+</menu>

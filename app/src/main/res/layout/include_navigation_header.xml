@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/header_container"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/app.navigation.head.height"
+    android:clickable="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app.theme.dark_blue.colorPrimary">
+
+        <ImageView
+            android:id="@+id/background_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end|bottom"
+            android:clickable="true"
+            android:src="@drawable/select_main_home"
+            android:tint="@color/app.image.tint" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/app.padding.normal">
+
+        <com.core.op.lib.weight.CircleImageView
+            android:id="@+id/user_avatar_view"
+            android:layout_width="@dimen/app.head.width.large"
+            android:layout_height="@dimen/app.head.width.large"
+            android:layout_gravity="start|top"
+            android:layout_margin="@dimen/app.margin.large"
+            android:src="@drawable/ic_main_head_default"
+            app:border_color="@android:color/white"
+            app:border_width="1dp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/app.margin.xlarge"
+            android:layout_marginTop="@dimen/app.margin.xlarge"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_head_noftiy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_main_nav_notify" />
+
+
+            <ImageView
+                android:id="@+id/iv_head_switch_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/app.margin.large"
+                android:src="@drawable/ic_main_nav_light" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/subtitle_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?attr/selectableItemBackground"
+        android:minHeight="@dimen/app.navigation.title.minwidth"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="start|center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/app.padding.small"
+                android:paddingEnd="@dimen/app.padding.large"
+                android:paddingStart="@dimen/app.padding.large"
+                android:paddingTop="@dimen/app.padding.normal"
+                android:textColor="@color/app.text"
+                android:textSize="@dimen/app.text.list.title" />
+
+            <TextView
+                android:id="@+id/user_other_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/app.padding.large"
+                android:paddingEnd="@dimen/app.padding.large"
+                android:paddingStart="@dimen/app.padding.large"
+                android:textColor="@color/app.text"
+                android:textSize="@dimen/app.padding.large" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

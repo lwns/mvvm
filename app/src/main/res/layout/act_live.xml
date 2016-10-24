@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.live.LiveViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/include_toolbar"
+            app:title="@{viewModel.title}" />
+
+        <FrameLayout
+            android:id="@+id/live_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app.video.height.normal"
+            android:background="@drawable/ic_shadow_gradient_reserve">
+
+
+            <SurfaceView
+                android:id="@+id/video_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{viewModel.mVideoViewVisible}" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/app.padding.small"
+                android:src="@drawable/ic_watermark_live_large" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/bili_anim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
+                    android:background="@{viewModel.mAnimViewBackground}"
+                    android:visibility="@{viewModel.mBiliAnimVisible}" />
+
+                <TextView
+                    android:id="@+id/video_start_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bili_anim"
+                    android:layout_marginTop="@dimen/app.margin.normal"
+                    android:text="@string/live.video.init"
+                    android:textColor="@color/app.text"
+                    android:textSize="@dimen/app.text.normal"
+                    android:visibility="@{viewModel.mLoadTextVisible}" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/right_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginBottom="@dimen/app.margin.xxxlarge"
+                android:layout_marginEnd="@dimen/app.margin.normal"
+                android:src="@{viewModel.mPlayResId}"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/bottom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@drawable/ic_shadow_normal_reserve"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/bottom_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:padding="@dimen/app.padding.normal"
+                    android:src="@{viewModel.mBottomPlayResId}" />
+
+                <ImageView
+                    android:id="@+id/bottom_love"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/bottom_fullscreen"
+                    android:padding="@dimen/app.padding.normal"
+                    android:src="@drawable/ic_live_player_send_gift" />
+
+
+                <ImageView
+                    android:id="@+id/bottom_fullscreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/app.padding.normal"
+                    android:src="@drawable/ic_live_palyer_zoom_in" />
+            </RelativeLayout>
+
+            <com.core.op.lib.weight.livelike.LoveLikeLayout
+                android:id="@+id/love_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/user_info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/app.padding.large"
+            android:paddingTop="@dimen/app.padding.large">
+
+
+            <com.core.op.lib.weight.CircleImageView
+                android:id="@+id/user_pic"
+                android:layout_width="@dimen/app.head.height.small"
+                android:layout_height="@dimen/app.head.height.small"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/app.margin.normal"
+                android:padding="@dimen/app.padding.small"
+                android:src="@drawable/ico_user_default"
+                app:uri="@{viewModel.face}" />
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/app.margin.normal"
+                android:layout_toEndOf="@+id/user_pic"
+                android:padding="@dimen/app.padding.small"
+                android:textColor="@color/app.text.black"
+                android:textSize="@dimen/app.text.normal" />
+
+
+            <TextView
+                android:id="@+id/live_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/app.margin.normal"
+                android:layout_toEndOf="@+id/user_name"
+                android:drawablePadding="@dimen/app.padding.small"
+                android:drawableStart="@drawable/ic_watching"
+                android:padding="@dimen/app.padding.small"
+                android:textColor="@color/app.text.gray.normal"
+                android:textSize="@dimen/app.text.small" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="@dimen/app.margin.normal"
+                android:background="@drawable/shape_btn_pin_bg"
+                android:gravity="center"
+                android:text="@string/live.add.follow"
+                android:textColor="@color/app.text.black" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app.divider.line"
+            android:background="@color/app.line" />
+
+    </LinearLayout>
+</layout>

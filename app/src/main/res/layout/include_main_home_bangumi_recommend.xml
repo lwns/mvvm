@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.main.home.bangumi.BangumiItemViewModel" />
+
+        <import type="com.core.op.lib.bindingadapter.common.LayoutManagers" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/head_recommend_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:hasFixedSize="@{viewModel.hasFixedSize}"
+            app:scrollingEnabled="@{viewModel.scrollingEnabled}"
+            app:itemView="@{viewModel.recommendItemView}"
+            app:items="@{viewModel.recommendModels}"
+            app:layoutManager="@{LayoutManagers.grid(3)}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/app.padding.small"
+            android:layout_marginStart="@dimen/app.padding.small">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/app.padding.normal"
+                android:drawableStart="@drawable/bangumi_home_ic_season_2"
+                android:padding="@dimen/app.padding.normal"
+                android:text="@string/main.home.bangumi.season"
+                android:textColor="@color/app.text"
+                android:textSize="@dimen/app.text.normal" />
+
+            <TextView
+                android:id="@+id/tv_all_new_bangumi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:drawableEnd="@drawable/register_bottom_arrow"
+                android:drawablePadding="@dimen/app.padding.normal"
+                android:padding="@dimen/app.padding.normal"
+                android:text="@string/main.home.bangumi.season.list"
+                android:textColor="@color/app.text"
+                android:textSize="@dimen/app.text.normal" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/head_season_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:hasFixedSize="@{viewModel.hasFixedSize}"
+            app:scrollingEnabled="@{viewModel.scrollingEnabled}"
+            app:itemView="@{viewModel.seasonItemView}"
+            app:items="@{viewModel.seasonModels}"
+            app:layoutManager="@{LayoutManagers.grid(3)}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/app.padding.small"
+            android:layout_marginStart="@dimen/app.padding.small">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/app.padding.normal"
+                android:drawableStart="@drawable/ic_tuijian"
+                android:padding="@dimen/app.padding.normal"
+                android:text="@string/main.home.bangumi.recommend"
+                android:textColor="@color/app.text"
+                android:textSize="@dimen/app.text.normal" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

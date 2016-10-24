@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.main.home.live.HomeLiveItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="@dimen/app.margin.large"
+            android:padding="@dimen/app.padding.normal">
+
+            <ImageView
+                android:id="@+id/item_live_partition_icon"
+                android:layout_width="@dimen/app.image.height.small"
+                android:layout_height="@dimen/app.image.height.small"
+                app:uri="@{viewModel.typeUri}" />
+
+            <TextView
+                android:id="@+id/item_live_partition_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/app.margin.small"
+                android:layout_marginTop="@dimen/app.margin.small"
+                android:layout_toEndOf="@+id/item_live_partition_icon"
+                android:gravity="center"
+                android:text="@{viewModel.typeName}"
+                android:textColor="@color/app.text"
+                android:textSize="@dimen/app.text.normal"
+                tools:text="直播分类名称" />
+
+            <TextView
+                android:id="@+id/item_live_partition_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/app.margin.small"
+                android:drawableEnd="@drawable/ic_light_gray_arrow_right"
+                android:drawablePadding="@dimen/app.padding.small"
+                android:gravity="center"
+                android:text="@{viewModel.typePerson}"
+                android:textColor="@color/app.text"
+                android:textSize="@dimen/app.text.normal"
+                tools:text="当前直播人数" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

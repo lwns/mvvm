@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.main.home.HomeViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/app.theme.dark_blue.colorPrimary"
+                    android:contentInsetStart="0dp"
+                    app:contentInsetStart="0dp"
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                    <LinearLayout
+                        android:id="@+id/navigation_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_navigation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_drawer_home"
+                            app:clickCommand="@{viewModel.navigationClick}" />
+
+                        <com.core.op.lib.weight.CircleImageView
+                            android:id="@+id/toolbar_user_avatar"
+                            android:layout_width="@dimen/app.head.height.small"
+                            android:layout_height="@dimen/app.head.height.small"
+                            android:layout_marginEnd="@dimen/app.margin.small"
+                            android:layout_marginStart="@dimen/app.margin.large"
+                            android:src="@drawable/ic_head_bg"
+                            app:border_color="@color/white"
+                            app:border_width="@dimen/app.head.border.width.small" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/app.margin.normal"
+                            android:singleLine="true"
+                            android:text="@string/main.home.title"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/app.text.large" />
+                    </LinearLayout>
+                </android.support.v7.widget.Toolbar>
+
+                <com.flyco.tablayout.SlidingTabLayout
+                    android:id="@+id/sliding_tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/app.tablayout.height.normal"
+                    android:background="@color/app.theme.dark_blue.colorPrimary"
+                    android:paddingLeft="@dimen/app.padding.normal"
+                    android:paddingRight="@dimen/app.padding.normal"
+                    app:tl_indicator_corner_radius="@dimen/app.tablayout.indicator.corner.radius.tiny"
+                    app:tl_indicator_height="@dimen/app.tablayout.indicator.height.normal"
+                    app:tl_indicator_width="@dimen/app.tablayout.indicator.width.normal"
+                    app:tl_tab_space_equal="true" />
+            </android.support.design.widget.AppBarLayout>
+
+            <com.core.op.lib.weight.NoScrollViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                app:fragments="@{viewModel.fragments}"
+                app:frgManager="@{viewModel.fragmentManager}"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:selectPosition="@{viewModel.selectPosition}"
+                app:titles="@{viewModel.titles}" />
+
+        </android.support.design.widget.CoordinatorLayout>
+    </FrameLayout>
+</layout>

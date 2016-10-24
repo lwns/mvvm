@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.core.op.feature.main.home.bangumi.BangumiSeasonItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app.margin.normal"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/app.cardview.corner.radius.normal"
+            app:cardElevation="@dimen/app.cardview.elevation.normal">
+
+
+            <ImageView
+                android:id="@+id/item_img"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/app.image.height.xxlarge.140"
+                android:scaleType="center"
+                app:uri="@{viewModel.uri}" />
+
+            <TextView
+                android:id="@+id/item_play"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@drawable/shape_normal_reserve"
+                android:gravity="end"
+                android:padding="@dimen/app.padding.normal"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/app.text.small" />
+
+        </android.support.v7.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="@dimen/app.padding.small"
+            android:singleLine="true"
+            android:text="@{viewModel.title}"
+            android:textColor="@color/app.text"
+            android:textSize="@dimen/app.text.normal" />
+
+        <TextView
+            android:id="@+id/item_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/app.padding.small"
+            android:paddingStart="@dimen/app.padding.small"
+            android:singleLine="true"
+            android:textColor="@color/app.text"
+            android:textSize="@dimen/app.text.normal" />
+
+    </LinearLayout>
+</layout>
