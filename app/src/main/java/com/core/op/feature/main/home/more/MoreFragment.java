@@ -19,11 +19,7 @@ import com.core.op.lib.utils.inject.RootView;
 import javax.inject.Inject;
 
 @RootView(R.layout.frg_more)
-public final class MoreFragment extends BaseFragment<FrgMoreBinding> {
-
-    @Inject
-    MoreViewModel viewModel;
-
+public final class MoreFragment extends BaseFragment<MoreViewModel, FrgMoreBinding> {
 
 
     public static MoreFragment instance() {
@@ -33,12 +29,10 @@ public final class MoreFragment extends BaseFragment<FrgMoreBinding> {
     @BeforeViews
     void beforViews() {
         getComponent(MainComponent.class).inject(this);
-        viewModel.setFragment(this);
     }
 
     @AfterViews
     void afterViews() {
-        binding.setViewModel(viewModel);
     }
 
 }

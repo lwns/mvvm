@@ -14,10 +14,6 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
@@ -43,12 +39,6 @@
         <activity
             android:name=".feature.live.LiveActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".view.impl." />
-        <activity android:name=".view.impl." />
-        <activity android:name=".view.impl." />
-        <activity android:name=".view.impl.New" />
-        <activity android:name=".view.impl.News" />
-        <activity android:name=".view.impl.News"></activity>
     </application>
 
 </manifest>

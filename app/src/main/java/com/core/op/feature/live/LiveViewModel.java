@@ -9,6 +9,8 @@ import android.view.SurfaceHolder;
 import android.view.View;
 
 import com.core.op.R;
+import com.core.op.databinding.ActLiveBinding;
+import com.core.op.lib.base.BAViewModel;
 import com.core.op.lib.base.BViewModel;
 import com.core.op.lib.di.PerActivity;
 import com.core.op.lib.utils.AppToast;
@@ -33,7 +35,7 @@ import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 import static com.core.op.feature.live.LiveActivity.*;
 
 @PerActivity
-public class LiveViewModel implements BViewModel {
+public class LiveViewModel extends BAViewModel<ActLiveBinding> {
 
     private final RxAppCompatActivity activity;
 
@@ -71,8 +73,9 @@ public class LiveViewModel implements BViewModel {
         this.useCase = liveUrlUserCase;
     }
 
-    public void afterViews(SurfaceHolder surfaceHolder) {
-        this.holder = surfaceHolder;
+    @Override
+    public void afterViews() {
+        this.holder = binding.videoView.getHolder();
         mAnimViewBackground.set((AnimationDrawable) activity.getResources().getDrawable(R.drawable.anim_video_loading));
         Intent intent = activity.getIntent();
         if (intent != null) {

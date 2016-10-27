@@ -2,28 +2,21 @@ package com.core.op.data.api;
 
 
 import android.app.Application;
-import android.content.Context;
 
 import com.core.op.data.util.NetUtil;
-import com.google.common.base.Objects;
+import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.google.common.base.Strings;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.inject.Inject;
-import javax.inject.Singleton;
 
 import okhttp3.Cache;
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;
-import okhttp3.Response;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -83,6 +76,7 @@ public class ApiOption {
                     .addInterceptor(logging)
                     .addInterceptor(new HeadInterceptor())
                     .addInterceptor(new CacheInterceptor(application))
+                    .addNetworkInterceptor(new StethoInterceptor())
                     .cache(provideCache(application))
                     .build();
         }

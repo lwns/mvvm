@@ -1,6 +1,7 @@
 package com.core.op.lib.bindingadapter.swiperefresh;
 
 import android.databinding.BindingAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 
 import com.core.op.lib.command.ReplyCommand;
@@ -20,6 +21,11 @@ public class ViewBindingAdapter {
                 }
             }
         });
+    }
+
+    @BindingAdapter(value = {"refresh"}, requireAll = false)
+    public static void setRefresh(final SwipeRefreshLayout swipeRefreshLayout, final Boolean refresh) {
+        swipeRefreshLayout.setRefreshing(refresh);
     }
 
 }

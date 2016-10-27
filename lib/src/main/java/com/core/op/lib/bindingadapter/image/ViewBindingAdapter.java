@@ -17,6 +17,7 @@ import android.text.TextUtils;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 /**
  * Created by kelin on 16-3-24.
@@ -26,7 +27,10 @@ public final class ViewBindingAdapter {
     @BindingAdapter({"uri"})
     public static void setImageUri(ImageView imageView, String uri) {
         if (!TextUtils.isEmpty(uri)) {
-            Glide.with(imageView.getContext()).load(uri).into(imageView);
+            Glide.with(imageView.getContext())
+                    .load(uri)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(imageView);
         }
     }
 //

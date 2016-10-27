@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.core.op.MainApplication;
 import com.core.op.di.components.AppComponent;
 import com.core.op.di.modules.ActivityModule;
+import com.core.op.lib.base.BAViewModel;
 import com.core.op.lib.base.BActivity;
 
 /**
@@ -14,7 +15,7 @@ import com.core.op.lib.base.BActivity;
  * @description
  * @createDate 2016/8/4
  */
-public class BaseActivity<T extends ViewDataBinding> extends BActivity<T> {
+public class BaseActivity<V extends BAViewModel, T extends ViewDataBinding> extends BActivity<V, T> {
 
     @Override
     protected void initBeforeView() {

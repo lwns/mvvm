@@ -8,8 +8,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.core.op.lib.base.BViewModel;
-
-import me.tatarka.bindingcollectionadapter.ItemView;
+import com.core.op.lib.bindingadapter.common.ItemView;
 
 
 /**

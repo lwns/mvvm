@@ -6,10 +6,9 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.core.op.lib.command.ReplyCommand;
-
 import java.util.concurrent.TimeUnit;
 
+import com.core.op.lib.command.ReplyCommand;
 import rx.subjects.PublishSubject;
 
 /**

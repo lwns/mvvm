@@ -4,13 +4,12 @@ package com.core.op.feature.main.home.more;
 import android.databinding.ObservableArrayList;
 import android.databinding.ObservableList;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.DrawableRes;
 import android.support.v4.app.FragmentManager;
 
 import com.core.op.BR;
 import com.core.op.R;
-import com.core.op.feature.main.home.bangumi.BangumiSeasonItemViewModel;
-import com.core.op.lib.base.BViewModel;
+import com.core.op.databinding.FrgMoreBinding;
+import com.core.op.lib.base.BFViewModel;
 import com.core.op.lib.bindingadapter.common.ItemView;
 import com.core.op.lib.di.PerActivity;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
@@ -19,10 +18,9 @@ import com.trello.rxlifecycle.components.support.RxFragment;
 import javax.inject.Inject;
 
 @PerActivity
-public final class MoreViewModel implements BViewModel {
+public final class MoreViewModel extends BFViewModel<FrgMoreBinding> {
 
     private final RxAppCompatActivity activity;
-    RxFragment fragment;
     private FragmentManager fragmentManager;
 
     // viewModel for RecyclerView
@@ -74,8 +72,8 @@ public final class MoreViewModel implements BViewModel {
         }
     }
 
-    public void setFragment(RxFragment fragment) {
-        this.fragment = fragment;
+    @Override
+    public void afterViews() {
         this.fragmentManager = fragment.getChildFragmentManager();
     }
 

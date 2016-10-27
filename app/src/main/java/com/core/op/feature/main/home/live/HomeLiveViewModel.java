@@ -1,17 +1,15 @@
 package com.core.op.feature.main.home.live;
 
 
-import android.databinding.ObservableArrayList;
 import android.databinding.ObservableField;
-import android.databinding.ObservableList;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.core.op.R;
-import com.core.op.feature.live.LiveActivity;
-import com.core.op.lib.base.BViewModel;
+import com.core.op.databinding.FrgHomeliveBinding;
+import com.core.op.lib.base.BFViewModel;
 import com.core.op.lib.bindingadapter.common.BaseItemViewSelector;
 import com.core.op.lib.bindingadapter.common.ItemView;
 import com.core.op.lib.bindingadapter.common.ItemViewSelector;
@@ -22,7 +20,6 @@ import com.domain.bean.LiveIndex;
 import com.domain.interactor.UseCase;
 import com.domain.interactor.main.LiveIndexUserCase;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
-import com.trello.rxlifecycle.components.support.RxFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,13 +28,10 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import rx.Observable;
-import rx.functions.Action0;
-
-import static android.R.attr.data;
 
 
 @PerActivity
-public final class HomeLiveViewModel implements BViewModel {
+public final class HomeLiveViewModel extends BFViewModel<FrgHomeliveBinding> {
 
     private RxAppCompatActivity activity;
 
@@ -46,10 +40,6 @@ public final class HomeLiveViewModel implements BViewModel {
     private UseCase<LiveIndex> useCase;
 
     private int entranceSize = 4;
-
-    RxFragment fragment;
-
-    private RecyclerView recyclerView;
 
     public final ObservableField<Boolean> refresh = new ObservableField<>(false);  // viewModel for RecyclerView
     public final List<HomeLiveItemViewModel> itemViewModel = new ArrayList<>();
@@ -117,12 +107,8 @@ public final class HomeLiveViewModel implements BViewModel {
         this.useCase = liveIndexUserCase;
     }
 
-    public void setFragment(RxFragment fragment) {
-        this.fragment = fragment;
-    }
-
-    public void afterViews(RecyclerView recyclerView) {
-        this.recyclerView = recyclerView;
+    @Override
+    public void afterViews() {
         loadData();
     }
 
@@ -149,7 +135,7 @@ public final class HomeLiveViewModel implements BViewModel {
                 }, e -> {
                     refresh.set(false);
                 }, () -> {
-                    recyclerView.getAdapter().notifyDataSetChanged();
+                    binding.recycle.getAdapter().notifyDataSetChanged();
                     refresh.set(false);
                 });
     }

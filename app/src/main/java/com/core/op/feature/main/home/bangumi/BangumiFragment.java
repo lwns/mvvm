@@ -1,5 +1,6 @@
 package com.core.op.feature.main.home.bangumi;
 
+import com.android.databinding.library.baseAdapters.BR;
 import com.core.op.R;
 import com.core.op.base.BaseFragment;
 import com.core.op.databinding.FrgBangumiBinding;
@@ -11,10 +12,7 @@ import com.core.op.lib.utils.inject.RootView;
 import javax.inject.Inject;
 
 @RootView(R.layout.frg_bangumi)
-public final class BangumiFragment extends BaseFragment<FrgBangumiBinding> {
-
-    @Inject
-    BangumiViewModel viewModel;
+public final class BangumiFragment extends BaseFragment<BangumiViewModel, FrgBangumiBinding> {
 
     public static BangumiFragment instance() {
         return new BangumiFragment();
@@ -23,12 +21,9 @@ public final class BangumiFragment extends BaseFragment<FrgBangumiBinding> {
     @BeforeViews
     void beforViews() {
         getComponent(MainComponent.class).inject(this);
-        viewModel.setFragment(this);
     }
 
     @AfterViews
     void afterViews() {
-        binding.setViewModel(viewModel);
-        viewModel.afterViews(binding.recycle);
     }
 }

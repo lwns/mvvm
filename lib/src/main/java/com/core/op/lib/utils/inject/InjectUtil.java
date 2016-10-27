@@ -5,9 +5,9 @@ import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.support.v4.app.Fragment;
 
-import com.core.op.lib.AppException;
-
 import java.lang.reflect.Method;
+
+import com.core.op.lib.AppException;
 
 /**
  * @author op

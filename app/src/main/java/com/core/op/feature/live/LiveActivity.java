@@ -18,7 +18,7 @@ import com.core.op.lib.utils.inject.RootView;
 import javax.inject.Inject;
 
 @RootView(R.layout.act_live)
-public final class LiveActivity extends BaseActivity<ActLiveBinding> {
+public final class LiveActivity extends BaseActivity<LiveViewModel, ActLiveBinding> {
 
     public static final String EXTRA_CID = "cid";
 
@@ -31,9 +31,6 @@ public final class LiveActivity extends BaseActivity<ActLiveBinding> {
     public static final String EXTRA_NAME = "name";
 
     public static final String EXTRA_MID = "mid";
-
-    @Inject
-    LiveViewModel viewModel;
 
     LiveComponent component;
 
@@ -61,9 +58,7 @@ public final class LiveActivity extends BaseActivity<ActLiveBinding> {
 
     @AfterViews
     void afterViews() {
-        binding.setViewModel(viewModel);
         initToolBar();
-        viewModel.afterViews(binding.videoView.getHolder());
     }
 
     public void initToolBar() {

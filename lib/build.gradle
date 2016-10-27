@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'me.tatarka.retrolambda'
-
+apply plugin: 'maven'
 def ext = rootProject.ext
 
 android {
@@ -12,17 +12,19 @@ android {
         versionCode ext.versionCode
         versionName ext.versionName
     }
+
 //    buildTypes {
 //        release {
 //            minifyEnabled false
 //            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 //        }
 //    }
-//    compileOptions {
-//        sourceCompatibility JavaVersion.VERSION_1_8
-//        targetCompatibility JavaVersion.VERSION_1_8
-//    }
-//
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     dataBinding {
         enabled = true
     }
@@ -31,9 +33,6 @@ android {
 dependencies {
 
     def compiles = ext.compiles
-    def provides = ext.provides
-    def apts = ext.apts
-    def release = ext.release
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -43,22 +42,32 @@ dependencies {
     compile compiles.supportCardView
     compile compiles.glide
     compile compiles.viewpagerIndicator
-    compile compiles.guangqiangWidgets
-    compile compiles.guangqiangUtils
-    compile compiles.okhttpLog
     compile compiles.logansquareConverter
     compile compiles.eventbus
     compile compiles.dagger
     compile compiles.rxlifecycle
-    compile compiles.bindingAdapter
-    compile compiles.bindingrecyclerView
     compile compiles.xrecyclerview
     compile compiles.bottomnavigation
+    compile compiles.tablayout
+}
 
-    compile 'com.jakewharton.timber:timber:4.1.2'
-
-    provided provides.daggerCompiler
-    provided provides.annotation
-
-    apt apts.logansquareCompiler
+uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            snapshotRepository(url: "http://127.0.0.1:8081/nexus/content/repositories/releases/") {
+                authentication(userName: "admin", password: "admin123")
+            }
+            repository(url: "http://127.0.0.1:8081/nexus/content/repositories/snapshots/") {
+                authentication(userName: "admin", password: "admin123")
+            }
+            pom.project {
+                version '1.0.1'
+                artifactId 'core'
+                groupId 'com.core.op'
+                packaging 'aar'
+                description 'android core'
+            }
+        }
+    }
 }

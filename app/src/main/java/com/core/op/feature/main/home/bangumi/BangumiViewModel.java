@@ -3,10 +3,10 @@ package com.core.op.feature.main.home.bangumi;
 
 import android.databinding.ObservableField;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.RecyclerView;
 
 import com.core.op.R;
-import com.core.op.lib.base.BViewModel;
+import com.core.op.databinding.FrgBangumiBinding;
+import com.core.op.lib.base.BFViewModel;
 import com.core.op.lib.bindingadapter.common.BaseItemViewSelector;
 import com.core.op.lib.bindingadapter.common.ItemView;
 import com.core.op.lib.bindingadapter.common.ItemViewSelector;
@@ -34,17 +34,16 @@ import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
-import static android.R.attr.data;
 import static com.core.op.feature.main.home.bangumi.BangumiItemViewModel.BANGUMI_TYPE_BANNER;
 import static com.core.op.feature.main.home.bangumi.BangumiItemViewModel.BANGUMI_TYPE_RECOMMEND;
 import static com.core.op.feature.main.home.bangumi.BangumiItemViewModel.BANGUMI_TYPE_SEASON;
 import static com.core.op.feature.main.home.bangumi.BangumiItemViewModel.BANGUMI_TYPE_SERIAL;
 
 @PerActivity
-public final class BangumiViewModel implements BViewModel {
+public final class BangumiViewModel extends BFViewModel<FrgBangumiBinding> {
 
     private final RxAppCompatActivity activity;
-    RxFragment fragment;
+
     private FragmentManager fragmentManager;
 
     private UseCase<BangumiRecommend> recommendUserCase;
@@ -53,11 +52,9 @@ public final class BangumiViewModel implements BViewModel {
 
     private UseCase<SeasonNewBangumi> seasonUserCase;
 
-    private RecyclerView recyclerView;
-
-    public final ObservableField<Boolean> refresh = new ObservableField<>(false);  // viewModel for RecyclerView
+    public final ObservableField<Boolean> refresh = new ObservableField<>(false);  // viewModel for binding.recycle
     public final List<BangumiItemViewModel> itemViewModel = new ArrayList<>();
-    // view layout for RecyclerView
+    // view layout for binding.recycle
     public final ItemViewSelector<BangumiItemViewModel> itemView = new BaseItemViewSelector<BangumiItemViewModel>() {
         @Override
         public void select(ItemView itemView, int position, BangumiItemViewModel itemViewModel) {
@@ -93,13 +90,15 @@ public final class BangumiViewModel implements BViewModel {
         this.seasonUserCase = bangumiIndexUserCase;
     }
 
+
     public void setFragment(RxFragment fragment) {
         this.fragment = fragment;
         this.fragmentManager = fragment.getChildFragmentManager();
     }
 
-    public void afterViews(RecyclerView recyclerView) {
-        this.recyclerView = recyclerView;
+    @Override
+    public void afterViews() {
+        fragmentManager = fragment.getChildFragmentManager();
         loadData();
     }
 
@@ -149,7 +148,7 @@ public final class BangumiViewModel implements BViewModel {
                         refresh.set(false);
                     }
                 }, () -> {
-                    recyclerView.getAdapter().notifyDataSetChanged();
+                    binding.recycle.getAdapter().notifyDataSetChanged();
                 });
     }
 }

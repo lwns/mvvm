@@ -16,7 +16,7 @@ public class AppToast {
         make(context, message).show();
     }
 
-    public static Toast make(Context context, String message) {
+    private static Toast make(Context context, String message) {
         return Toast.makeText(context, message, Toast.LENGTH_SHORT);
     }
 }

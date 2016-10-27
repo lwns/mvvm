@@ -5,7 +5,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 import com.core.op.R;
+import com.core.op.databinding.ActMainBinding;
 import com.core.op.feature.main.home.HomeFragment;
+import com.core.op.lib.base.BAViewModel;
 import com.core.op.lib.base.BViewModel;
 import com.core.op.lib.bindingadapter.bottomnavigation.NavigationRes;
 import com.core.op.lib.bindingadapter.bottomnavigation.ViewBindingAdapter;
@@ -25,7 +27,7 @@ import javax.inject.Inject;
  * @createDate 2016/9/21
  */
 @PerActivity
-public class MainViewModel implements BViewModel {
+public class MainViewModel extends BAViewModel<ActMainBinding> {
 
     private RxAppCompatActivity activity;
 
@@ -41,5 +43,9 @@ public class MainViewModel implements BViewModel {
         this.activity = activity;
         fragmentManager = activity.getSupportFragmentManager();
         fragments.add(HomeFragment.instance());
+    }
+
+    @Override
+    public void afterViews() {
     }
 }

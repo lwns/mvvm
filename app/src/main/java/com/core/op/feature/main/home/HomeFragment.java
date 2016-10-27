@@ -5,35 +5,27 @@ import com.core.op.base.BaseFragment;
 import com.core.op.databinding.FrgHomeBinding;
 import com.core.op.di.components.MainComponent;
 import com.core.op.feature.main.MainActivity;
-import com.core.op.feature.main.MainViewModel;
 import com.core.op.lib.messenger.Messenger;
 import com.core.op.lib.utils.inject.AfterViews;
 import com.core.op.lib.utils.inject.BeforeViews;
 import com.core.op.lib.utils.inject.RootView;
 
-import javax.inject.Inject;
-
 import static com.core.op.lib.bindingadapter.viewpager.ViewBindingAdapter.VIEWPAGE_INIT_COMPLATE;
 
 @RootView(R.layout.frg_home)
-public final class HomeFragment extends BaseFragment<FrgHomeBinding> {
+public final class HomeFragment extends BaseFragment<HomeViewModel, FrgHomeBinding> {
 
     public static HomeFragment instance() {
         return new HomeFragment();
     }
 
-    @Inject
-    HomeViewModel viewModel;
-
     @BeforeViews
     void beforViews() {
         getComponent(MainComponent.class).inject(this);
-        viewModel.setFragment(this);
     }
 
     @AfterViews
     void afterViews() {
-        binding.setViewModel(viewModel);
         setHasOptionsMenu(true);
         initToolBar();
         initViewPage();

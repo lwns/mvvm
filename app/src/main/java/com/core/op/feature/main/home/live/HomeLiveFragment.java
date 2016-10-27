@@ -13,25 +13,18 @@ import com.orhanobut.logger.Logger;
 import javax.inject.Inject;
 
 @RootView(R.layout.frg_homelive)
-public final class HomeLiveFragment extends BaseFragment<FrgHomeliveBinding> {
+public final class HomeLiveFragment extends BaseFragment<HomeLiveViewModel, FrgHomeliveBinding> {
 
     public static HomeLiveFragment instance() {
         return new HomeLiveFragment();
     }
 
-    @Inject
-    HomeLiveViewModel viewModel;
-
     @BeforeViews
     void beforViews() {
         getComponent(MainComponent.class).inject(this);
-        viewModel.setFragment(this);
-        Logger.d("start beforViews");
     }
 
     @AfterViews
     void afterViews() {
-        binding.setViewModel(viewModel);
-        viewModel.afterViews(binding.recycle);
     }
 }

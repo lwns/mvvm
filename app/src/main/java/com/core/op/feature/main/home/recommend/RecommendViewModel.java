@@ -1,16 +1,10 @@
 package com.core.op.feature.main.home.recommend;
 
 
-import android.databinding.ObservableArrayList;
-import android.databinding.ObservableList;
 import android.support.v4.app.FragmentManager;
 
-import com.core.op.R;
-import com.core.op.feature.main.home.live.HomeLiveItemViewModel;
-import com.core.op.lib.base.BViewModel;
-import com.core.op.lib.bindingadapter.common.BaseItemViewSelector;
-import com.core.op.lib.bindingadapter.common.ItemView;
-import com.core.op.lib.bindingadapter.common.ItemViewSelector;
+import com.core.op.databinding.FrgRecommendBinding;
+import com.core.op.lib.base.BFViewModel;
 import com.core.op.lib.di.PerActivity;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import com.trello.rxlifecycle.components.support.RxFragment;
@@ -18,10 +12,9 @@ import com.trello.rxlifecycle.components.support.RxFragment;
 import javax.inject.Inject;
 
 @PerActivity
-public final class RecommendViewModel implements BViewModel {
+public final class RecommendViewModel extends BFViewModel<FrgRecommendBinding> {
 
     private final RxAppCompatActivity activity;
-    RxFragment fragment;
     private FragmentManager fragmentManager;
 
 //    // viewModel for RecyclerView
@@ -55,8 +48,9 @@ public final class RecommendViewModel implements BViewModel {
         this.activity = activity;
     }
 
-    public void setFragment(RxFragment fragment) {
-        this.fragment = fragment;
+
+    @Override
+    public void afterViews() {
         this.fragmentManager = fragment.getChildFragmentManager();
     }
 }

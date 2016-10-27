@@ -1,12 +1,13 @@
 package com.core.op.lib.bindingadapter.recyclerview;
 
 import android.databinding.BindingAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.core.op.lib.command.ReplyCommand;
-
 import java.util.concurrent.TimeUnit;
+
+import com.core.op.lib.command.ReplyCommand;
 
 import rx.subjects.PublishSubject;
 
@@ -14,6 +15,12 @@ import rx.subjects.PublishSubject;
  * Created by kelin on 16-4-26.
  */
 public class ViewBindingAdapter {
+
+    @BindingAdapter(value = {"hasFixedSize", "scrollingEnabled"}, requireAll = false)
+    public static void setIndex(final RecyclerView recyclerView, final Boolean hasFixedSize, final Boolean scrollingEnabled) {
+        recyclerView.setHasFixedSize(hasFixedSize);
+        recyclerView.setNestedScrollingEnabled(scrollingEnabled);
+    }
 
     @BindingAdapter(value = {"onScrollChangeCommand", "onScrollStateChangedCommand"}, requireAll = false)
     public static void onScrollChangeCommand(final RecyclerView recyclerView,
@@ -47,7 +54,6 @@ public class ViewBindingAdapter {
     public static void onLoadMoreCommand(final RecyclerView recyclerView, final ReplyCommand<Integer> onLoadMoreCommand) {
         RecyclerView.OnScrollListener listener = new OnScrollListener(onLoadMoreCommand);
         recyclerView.addOnScrollListener(listener);
-
     }
 
     public static class OnScrollListener extends RecyclerView.OnScrollListener {

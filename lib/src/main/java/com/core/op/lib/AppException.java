@@ -7,9 +7,6 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
 import android.os.Looper;
 
-import com.core.op.lib.utils.DateUtil;
-import com.core.op.lib.utils.FileUtil;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -19,6 +16,9 @@ import java.lang.Thread.UncaughtExceptionHandler;
 import java.net.ConnectException;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+
+import com.core.op.lib.utils.DateUtil;
+import com.core.op.lib.utils.FileUtil;
 
 /**
  * @author op

@@ -10,9 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.databinding.library.baseAdapters.BR;
+import com.core.op.lib.utils.inject.InjectUtil;
 import com.trello.rxlifecycle.components.support.RxFragment;
 
-import com.core.op.lib.utils.inject.InjectUtil;
+import javax.inject.Inject;
 
 
 /**
@@ -21,11 +23,14 @@ import com.core.op.lib.utils.inject.InjectUtil;
  * @description
  * @createDate 2016/2/2
  */
-public class BFragment<T extends ViewDataBinding> extends RxFragment {
+public class BFragment<V extends BFViewModel, T extends ViewDataBinding> extends RxFragment {
 
     protected LayoutInflater inflater;
 
     protected FragmentActivity activity;
+
+    @Inject
+    protected V viewModel;
 
     protected T binding;
 
@@ -46,7 +51,11 @@ public class BFragment<T extends ViewDataBinding> extends RxFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        viewModel.setFragment(this);
+        viewModel.setBinding(binding);
+        binding.setVariable(BR.viewModel, viewModel);
         InjectUtil.injectAfterView(this);
+        viewModel.afterViews();
     }
 
 

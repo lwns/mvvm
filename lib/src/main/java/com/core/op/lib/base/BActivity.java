@@ -1,14 +1,20 @@
 package com.core.op.lib.base;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 
-import com.core.op.lib.utils.inject.InjectUtil;
+import com.core.op.lib.BR;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
+
+import com.core.op.lib.utils.inject.InjectUtil;
+
+import javax.inject.Inject;
+
+import static android.databinding.tool.util.GenerationalClassUtil.ExtensionFilter.BR;
 
 
 /**
@@ -17,11 +23,14 @@ import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
  * @description
  * @createDate 2016/2/1
  */
-public class BActivity<T extends ViewDataBinding> extends RxAppCompatActivity {
+public class BActivity<V extends BAViewModel, T extends ViewDataBinding> extends RxAppCompatActivity {
 
     protected LayoutInflater inflater;
 
     protected T binding;
+
+    @Inject
+    protected V viewModel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,7 +38,10 @@ public class BActivity<T extends ViewDataBinding> extends RxAppCompatActivity {
         inflater = LayoutInflater.from(this);
         initBeforeView();
         initRootView();
+        viewModel.setBinding(binding);
+        binding.setVariable(BR.viewModel, viewModel);
         initAfterView();
+        viewModel.afterViews();
     }
 
     protected void initBeforeView() {
@@ -51,7 +63,7 @@ public class BActivity<T extends ViewDataBinding> extends RxAppCompatActivity {
      * @param fragment        The fragment to be added.
      */
     protected void addFragment(int containerViewId, Fragment fragment) {
-        FragmentTransaction fragmentTransaction = this.getFragmentManager().beginTransaction();
+        FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(containerViewId, fragment);
         fragmentTransaction.commit();
     }

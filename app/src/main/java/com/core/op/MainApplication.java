@@ -6,6 +6,7 @@ import com.core.op.di.components.AppComponent;
 import com.core.op.di.components.DaggerAppComponent;
 import com.core.op.di.modules.AppModule;
 import com.core.op.lib.AppException;
+import com.facebook.stetho.Stetho;
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
 import com.squareup.leakcanary.LeakCanary;
@@ -33,6 +34,8 @@ public class MainApplication extends Application {
             Timber.plant(new Timber.DebugTree());
             Timber.tag("YTP");
         }
+
+        Stetho.initializeWithDefaults(this);
 
         Logger.init("YTP")                 // default PRETTYLOGGER or use just init()
                 .methodCount(3)                 // default 2

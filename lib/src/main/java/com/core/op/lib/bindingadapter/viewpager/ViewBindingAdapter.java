@@ -5,29 +5,38 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 
-import com.core.op.lib.command.ReplyCommand;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import com.core.op.lib.command.ReplyCommand;
+import com.core.op.lib.messenger.Messenger;
 
 /**
  * Created by kelin on 16-6-1.
  */
 public class ViewBindingAdapter {
 
-    @BindingAdapter(value = {"frgManager", "fragemnts"}, requireAll = false)
-    public static void setAdapter(final ViewPager viewPager, final FragmentManager fragmentManager, List<Fragment> items) {
+    public static final String VIEWPAGE_INIT_COMPLATE = "VIEWPAGE_INIT_COMPLATE";
+
+    @BindingAdapter(value = {"frgManager", "fragments", "titles"}, requireAll = false)
+    public static void init(final ViewPager viewPager, final FragmentManager fragmentManager, List<Fragment> items, List<String> titles) {
         if (items == null) {
             items = new ArrayList<>();
         }
-        ViewPagerFragmentAdatper adatper = new ViewPagerFragmentAdatper(fragmentManager, items);
+        ViewPagerFragmentAdatper adatper;
+        if (titles == null) {
+            adatper = new ViewPagerFragmentAdatper(fragmentManager, items);
+        } else {
+            adatper = new ViewPagerFragmentAdatper(fragmentManager, items, titles);
+        }
         viewPager.setAdapter(adatper);
+        Messenger.getDefault().sendNoMsg(VIEWPAGE_INIT_COMPLATE);
     }
 
     @BindingAdapter(value = {"selectPosition"}, requireAll = false)
-    public static void setAdapter(final ViewPager viewPager, final Integer position) {
-        viewPager.setCurrentItem(position);
+    public static void setIndex(final ViewPager viewPager, final Integer position) {
+        if (viewPager != null && viewPager.getAdapter() != null)
+            viewPager.setCurrentItem(position);
     }
 
     @BindingAdapter(value = {"onPageScrolledCommand", "onPageSelectedCommand", "onPageScrollStateChangedCommand"}, requireAll = false)

@@ -11,10 +11,7 @@ import com.core.op.lib.utils.inject.RootView;
 import javax.inject.Inject;
 
 @RootView(R.layout.frg_recommend)
-public final class RecommendFragment extends BaseFragment<FrgRecommendBinding> {
-
-    @Inject
-    RecommendViewModel viewModel;
+public final class RecommendFragment extends BaseFragment<RecommendViewModel, FrgRecommendBinding> {
 
     public static RecommendFragment instance() {
         return new RecommendFragment();
@@ -23,11 +20,9 @@ public final class RecommendFragment extends BaseFragment<FrgRecommendBinding> {
     @BeforeViews
     void beforViews() {
         getComponent(MainComponent.class).inject(this);
-        viewModel.setFragment(this);
     }
 
     @AfterViews
     void afterViews() {
-        binding.setViewModel(viewModel);
     }
 }

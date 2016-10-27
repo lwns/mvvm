@@ -25,10 +25,7 @@ import javax.inject.Inject;
  * @createDate 2016/9/21
  */
 @RootView(R.layout.act_main)
-public class MainActivity extends BaseActivity<ActMainBinding> implements HasComponent<MainComponent> {
-
-    @Inject
-    MainViewModel viewModel;
+public class MainActivity extends BaseActivity<MainViewModel, ActMainBinding> implements HasComponent<MainComponent> {
 
     MainComponent component;
 
@@ -46,7 +43,6 @@ public class MainActivity extends BaseActivity<ActMainBinding> implements HasCom
 
     @AfterViews
     void afterViews() {
-        binding.setViewModel(viewModel);
     }
 
     /**

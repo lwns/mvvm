@@ -5,6 +5,7 @@ import android.databinding.BindingAdapter;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter;
+
 import com.core.op.lib.command.ReplyCommand;
 
 

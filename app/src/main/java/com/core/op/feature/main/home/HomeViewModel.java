@@ -7,10 +7,12 @@ import android.databinding.ObservableField;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
+import com.core.op.databinding.FrgHomeBinding;
 import com.core.op.feature.main.MainActivity;
 import com.core.op.feature.main.home.bangumi.BangumiFragment;
 import com.core.op.feature.main.home.live.HomeLiveFragment;
 import com.core.op.feature.main.home.more.MoreFragment;
+import com.core.op.lib.base.BFViewModel;
 import com.core.op.lib.base.BViewModel;
 import com.core.op.lib.command.ReplyCommand;
 import com.core.op.lib.di.PerActivity;
@@ -25,11 +27,9 @@ import java.util.List;
 import javax.inject.Inject;
 
 @PerActivity
-public final class HomeViewModel implements BViewModel {
+public final class HomeViewModel extends BFViewModel<FrgHomeBinding> {
 
     private RxAppCompatActivity activity;
-
-    RxFragment fragment;
 
     public FragmentManager fragmentManager;
 
@@ -57,9 +57,8 @@ public final class HomeViewModel implements BViewModel {
         fragments.add(MoreFragment.instance());
     }
 
-    public void setFragment(RxFragment fragment) {
-        this.fragment = fragment;
+    @Override
+    public void afterViews() {
         this.fragmentManager = fragment.getChildFragmentManager();
-//        Messenger.getDefault().sendNoMsgToTargetWithToken(TOKEN_UPDATE_TAB, fragment);
     }
 }
