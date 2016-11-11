@@ -10,9 +10,7 @@ public class BannerEntity {
 
     public String title;
 
-
     public String img;
-
 
     public String link;
 }
